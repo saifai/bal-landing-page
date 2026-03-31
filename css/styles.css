@@ -1133,18 +1133,19 @@ button { font-family: inherit; }
   font-size: 1rem;
 }
 
-/* ===== WHAT'S THE CATCH ===== */
-.catch-copy {
+/* ===== WHY $47 ===== */
+.why-copy {
   margin-bottom: var(--space-lg);
 }
 
-.catch-copy p {
+.why-copy p {
   font-size: 1.15rem;
   margin-bottom: 14px;
   color: var(--charcoal);
   line-height: 1.7;
 }
 
+/* legacy — keep in case names grid is re-added */
 .names-grid {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
@@ -1899,11 +1900,8 @@ button { font-family: inherit; }
   .mockup-doc { width: 110px; }
   .laptop-screen { width: 140px; height: 88px; }
 
-  /* What's the Catch */
-  .catch-copy p { font-size: 1.05rem; margin-bottom: 10px; }
-  .names-grid { gap: 12px; }
-  .name-card { padding: 1.25rem 1rem; }
-  .name-card h4 { font-size: 1.05rem; }
+  /* Why $47 */
+  .why-copy p { font-size: 1.05rem; margin-bottom: 10px; }
 
   /* Trustpilot Reviews */
   .tp-headline { font-size: 1.6rem; }
