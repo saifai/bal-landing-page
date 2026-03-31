@@ -1155,8 +1155,19 @@ button { font-family: inherit; }
 @media (max-width: 768px) {
   body { font-size: 16px; }
 
+  /* Drastically tighten section spacing on mobile */
+  .section {
+    padding: 2rem 1rem;
+  }
+
+  .container, .container.narrow {
+    padding: 0 16px;
+  }
+
+  /* Navbar */
   .navbar-menu { display: none; }
   .navbar-toggle { display: block; }
+  .navbar-container { padding: 10px 16px; }
 
   .navbar-menu.active {
     display: flex;
@@ -1184,43 +1195,279 @@ button { font-family: inherit; }
 
   .sticky-mobile-cta { display: block; }
 
-  .for-grid { grid-template-columns: 1fr; }
+  /* Hero — compact, headline visible immediately */
+  .hero {
+    padding: 70px 1rem 1.5rem;
+  }
 
-  .stats-row { gap: 10px; }
-  .stat-number { font-size: 2rem; }
+  .hero-title {
+    font-size: 1.55rem;
+    margin-bottom: 10px;
+  }
 
+  .hero-subtitle {
+    font-size: 14px;
+    margin-bottom: 1.25rem;
+  }
+
+  .video-container {
+    margin-bottom: 1.25rem;
+    border-radius: 8px;
+  }
+
+  .play-btn {
+    width: 54px;
+    height: 54px;
+    font-size: 1.1rem;
+    box-shadow: 0 0 0 8px rgba(201,168,76,0.15);
+  }
+
+  .hero-cta, .cta-wrap {
+    margin-top: 1.25rem;
+  }
+
+  .cta-primary {
+    font-size: 1rem;
+    padding: 0.85rem 1.75rem;
+    letter-spacing: 1px;
+    width: 100%;
+    max-width: 100%;
+  }
+
+  .cta-sub {
+    font-size: 0.8rem;
+    margin-top: 6px;
+  }
+
+  .trust-bar {
+    margin-top: 1.5rem;
+    padding-top: 1rem;
+    gap: 8px;
+  }
+
+  .trust-logo-item { font-size: 14px; }
+  .trust-stat { font-size: 11px; }
+  .trust-sep { display: none; }
+
+  /* Section headlines */
+  .section-headline {
+    font-size: 1.45rem;
+    margin-bottom: 1.25rem;
+  }
+
+  /* Sound Familiar */
+  .familiar-item {
+    font-size: 1.05rem;
+    padding: 10px 0;
+  }
+
+  .closing-line {
+    font-size: 1.1rem;
+    margin-bottom: 0;
+  }
+
+  /* Credibility */
+  .credibility-layout {
+    gap: 1.5rem;
+    margin-bottom: 1.5rem;
+  }
+
+  .photo-placeholder:not(.circle) {
+    max-width: 160px;
+    aspect-ratio: 1;
+  }
+
+  .credibility-text p {
+    font-size: 1.05rem;
+    margin-bottom: 8px;
+  }
+
+  /* Stats — 2x2 grid, compact */
+  .stats-row {
+    gap: 8px;
+    margin-bottom: 1rem;
+  }
+
+  .stat-card {
+    padding: 16px 8px;
+  }
+
+  .stat-number { font-size: 1.75rem; }
+  .stat-label { font-size: 11px; }
+
+  /* Case Studies */
+  .case-grid {
+    gap: 16px;
+    margin-bottom: 0;
+  }
+
+  .case-card {
+    padding: 1.25rem 1rem;
+  }
+
+  .case-card h3 { font-size: 1.2rem; }
+
+  .case-desc {
+    font-size: 0.95rem;
+    margin-bottom: 0.75rem;
+  }
+
+  .case-results li {
+    font-size: 0.95rem;
+    padding: 3px 0;
+  }
+
+  .photo-placeholder.circle {
+    width: 70px;
+  }
+
+  /* Mistakes */
+  .mistake-item {
+    gap: 1rem;
+    padding-bottom: 1rem;
+  }
+
+  .mistake-x {
+    width: 36px;
+    height: 36px;
+    font-size: 0.9rem;
+  }
+
+  .mistake-item h3 { font-size: 1.1rem; }
+  .mistake-item p { font-size: 1rem; }
+
+  /* Weeks */
+  .weeks-stack {
+    gap: 0.75rem;
+    margin-bottom: 0;
+  }
+
+  .week-block {
+    padding: 1rem 1.25rem;
+  }
+
+  .week-label { font-size: 0.8rem; letter-spacing: 1.5px; }
+  .week-block h3 { font-size: 1.15rem; margin-bottom: 4px; }
+  .week-block p { font-size: 1rem; margin-bottom: 8px; }
+
+  /* Bonuses */
   .bonus-item {
     flex-direction: column;
-    gap: var(--space-xs);
+    gap: 4px;
+    padding: 1rem 0;
   }
+
+  .bonus-info h4 { font-size: 1.05rem; }
+  .bonus-info p { font-size: 0.95rem; }
+  .bonus-value { font-size: 1.1rem; }
+
+  .bonus-total-row {
+    flex-direction: column;
+    align-items: center;
+    gap: 4px;
+    padding-top: 1rem;
+    margin-top: 0.5rem;
+  }
+
+  .bonus-total-amount { font-size: 2rem; }
+
+  /* Pricing */
+  .pricing-copy {
+    margin-bottom: 1.5rem;
+  }
+
+  .pricing-copy p {
+    font-size: 1.05rem;
+    margin-bottom: 10px;
+  }
+
+  .price-display {
+    flex-direction: column;
+    gap: 8px;
+    padding: 1.25rem;
+    margin-bottom: 1.25rem;
+  }
+
+  .price-original { font-size: 1.5rem; }
+  .price-final { font-size: 2.5rem; }
+  .price-arrow { display: none; }
 
   .guarantee-badge {
     flex-direction: column;
     text-align: center;
     align-items: center;
+    padding: 1.25rem;
+    margin-top: 1.25rem;
   }
 
-  .price-display {
-    flex-direction: column;
-    gap: var(--space-sm);
+  .guarantee-icon { font-size: 2rem; }
+  .guarantee-text { font-size: 0.95rem; }
+
+  /* Who For */
+  .for-grid {
+    grid-template-columns: 1fr;
+    gap: 12px;
   }
 
-  .price-final { font-size: 2.5rem; }
+  .for-column, .not-for-column {
+    padding: 1.25rem 1rem;
+  }
 
+  .for-column h3, .not-for-column h3 { font-size: 1.05rem; }
+
+  .for-column li, .not-for-column li {
+    font-size: 0.95rem;
+    padding: 4px 0 4px 22px;
+  }
+
+  /* FAQ */
+  .faq-item {
+    padding: 1rem 0;
+  }
+
+  .faq-question {
+    font-size: 1.05rem;
+  }
+
+  .faq-answer p {
+    font-size: 1rem;
+    padding-top: 0.5rem;
+  }
+
+  /* Final CTA */
   .section.final {
-    padding-bottom: calc(var(--section-py) + 60px);
+    padding: 2rem 1rem 5rem;
   }
 
+  .section.final h2 {
+    font-size: 1.4rem;
+  }
+
+  .final-emphasis { font-size: 1.2rem; margin-bottom: 1rem; }
+
+  .final-content p {
+    font-size: 1.05rem;
+    margin-bottom: 10px;
+  }
+
+  .final-signoff {
+    margin-top: 1.5rem;
+  }
+
+  /* Back to top above sticky CTA */
   .back-to-top {
     bottom: 68px;
     right: 16px;
+    width: 40px;
+    height: 40px;
   }
 }
 
-@media (max-width: 480px) {
-  .hero-title { font-size: 1.6rem; }
-  .section-headline { font-size: 1.5rem; }
-  .container { padding: 0 16px; }
-  .trust-bar { gap: 10px; }
-  .trust-logo-item { font-size: 15px; }
+/* Extra small — phones in portrait */
+@media (max-width: 400px) {
+  .hero-title { font-size: 1.35rem; }
+  .section-headline { font-size: 1.3rem; }
+  .stat-number { font-size: 1.5rem; }
+  .stat-label { font-size: 10px; }
+  .cta-primary { font-size: 0.95rem; padding: 0.8rem 1.25rem; }
 }
