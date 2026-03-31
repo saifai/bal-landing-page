@@ -688,6 +688,242 @@ button { font-family: inherit; }
   margin-bottom: 4px;
 }
 
+/* ===== OFFER CARDS (Week-by-Week with Graphics) ===== */
+.offer-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 24px;
+  margin-bottom: var(--space-lg);
+}
+
+.offer-card {
+  background: var(--white);
+  border: 1px solid var(--border-light);
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 2px 20px rgba(0,0,0,0.06);
+  transition: all 0.3s ease;
+}
+
+.offer-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 8px 30px rgba(0,0,0,0.1);
+}
+
+.offer-graphic {
+  background: linear-gradient(135deg, var(--navy) 0%, #2a3f6a 100%);
+  padding: 32px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 180px;
+}
+
+.offer-text {
+  padding: var(--space-md) var(--space-lg);
+}
+
+/* --- Book Mockup --- */
+.mockup-book {
+  display: flex;
+  transform: perspective(800px) rotateY(-8deg);
+  transition: transform 0.4s ease;
+}
+
+.offer-card:hover .mockup-book {
+  transform: perspective(800px) rotateY(-2deg);
+}
+
+.book-spine {
+  width: 18px;
+  background: linear-gradient(180deg, var(--gold) 0%, #a8882e 100%);
+  border-radius: 3px 0 0 3px;
+}
+
+.book-cover {
+  width: 110px;
+  height: 150px;
+  background: linear-gradient(135deg, #f5f0e6 0%, #e8dfd0 100%);
+  border-radius: 0 4px 4px 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  box-shadow: 4px 4px 12px rgba(0,0,0,0.3);
+  padding: 12px;
+}
+
+.book-cover i {
+  font-size: 1.8rem;
+  color: var(--gold);
+}
+
+.book-cover span {
+  font-family: var(--font-headline);
+  font-size: 11px;
+  font-weight: 700;
+  color: var(--navy);
+  text-align: center;
+  line-height: 1.3;
+  letter-spacing: 0.5px;
+}
+
+/* --- Document Mockup --- */
+.mockup-doc {
+  width: 130px;
+  background: #fff;
+  border-radius: 6px;
+  padding: 18px 16px;
+  box-shadow: 4px 4px 12px rgba(0,0,0,0.3);
+  transform: rotate(-2deg);
+  transition: transform 0.4s ease;
+}
+
+.offer-card:hover .mockup-doc {
+  transform: rotate(0deg);
+}
+
+.doc-line {
+  height: 6px;
+  background: #e0dcd4;
+  border-radius: 3px;
+  margin-bottom: 8px;
+}
+
+.doc-sep {
+  height: 1px;
+  background: var(--border-light);
+  margin: 12px 0;
+}
+
+.w50 { width: 50%; }
+.w60 { width: 60%; }
+.w70 { width: 70%; }
+.w75 { width: 75%; }
+.w80 { width: 80%; }
+.w85 { width: 85%; }
+.w90 { width: 90%; }
+
+/* --- Laptop Mockup --- */
+.mockup-laptop {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  transition: transform 0.4s ease;
+}
+
+.offer-card:hover .mockup-laptop {
+  transform: scale(1.03);
+}
+
+.laptop-screen {
+  width: 160px;
+  height: 100px;
+  background: #1a1a2e;
+  border-radius: 6px 6px 0 0;
+  border: 3px solid #555;
+  overflow: hidden;
+}
+
+.screen-header {
+  height: 10px;
+  background: #333;
+  display: flex;
+  align-items: center;
+  padding: 0 6px;
+}
+
+.screen-content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: calc(100% - 10px);
+  gap: 6px;
+  color: var(--gold);
+}
+
+.screen-content i {
+  font-size: 1.6rem;
+}
+
+.screen-content span {
+  font-family: var(--font-headline);
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 1.5px;
+  color: rgba(255,255,255,0.6);
+}
+
+.laptop-base {
+  width: 180px;
+  height: 8px;
+  background: linear-gradient(180deg, #666 0%, #888 100%);
+  border-radius: 0 0 4px 4px;
+}
+
+/* --- Rocket / Launch Mockup --- */
+.mockup-rocket {
+  text-align: center;
+  position: relative;
+  transition: transform 0.4s ease;
+}
+
+.offer-card:hover .mockup-rocket {
+  transform: translateY(-6px);
+}
+
+.mockup-rocket > i {
+  font-size: 3.5rem;
+  color: var(--gold);
+  filter: drop-shadow(0 4px 12px rgba(201,168,76,0.4));
+}
+
+.rocket-badge {
+  position: absolute;
+  bottom: -8px;
+  right: -20px;
+  width: 48px;
+  height: 48px;
+  background: var(--gold);
+  border-radius: 50%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.3);
+  gap: 1px;
+}
+
+.rocket-badge i {
+  font-size: 10px;
+  color: var(--navy);
+}
+
+.rocket-badge span {
+  font-family: var(--font-headline);
+  font-size: 14px;
+  font-weight: 700;
+  color: var(--navy);
+  line-height: 1;
+}
+
+/* --- Bonus Icon Graphics --- */
+.bonus-icon-graphic {
+  width: 52px;
+  height: 52px;
+  border-radius: 12px;
+  background: linear-gradient(135deg, rgba(201,168,76,0.15) 0%, rgba(201,168,76,0.05) 100%);
+  border: 1px solid rgba(201,168,76,0.2);
+  color: var(--gold);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.2rem;
+  flex-shrink: 0;
+}
+
 /* ===== WEEKS ===== */
 .weeks-stack {
   display: flex;
@@ -1299,6 +1535,13 @@ button { font-family: inherit; }
 }
 
 @media (max-width: 900px) {
+  .offer-grid {
+    grid-template-columns: 1fr;
+    max-width: 480px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
   .case-grid {
     grid-template-columns: 1fr;
     max-width: 440px;
@@ -1614,6 +1857,13 @@ button { font-family: inherit; }
     font-size: 0.95rem;
     padding: 4px 0 4px 22px;
   }
+
+  /* Offer grid */
+  .offer-grid { grid-template-columns: 1fr; }
+  .offer-graphic { min-height: 140px; padding: 24px; }
+  .book-cover { width: 90px; height: 120px; }
+  .mockup-doc { width: 110px; }
+  .laptop-screen { width: 140px; height: 88px; }
 
   /* What's the Catch */
   .catch-copy p { font-size: 1.05rem; margin-bottom: 10px; }
