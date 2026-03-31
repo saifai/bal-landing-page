@@ -897,6 +897,172 @@ button { font-family: inherit; }
   font-size: 1rem;
 }
 
+/* ===== WHAT'S THE CATCH ===== */
+.catch-copy {
+  margin-bottom: var(--space-lg);
+}
+
+.catch-copy p {
+  font-size: 1.15rem;
+  margin-bottom: 14px;
+  color: var(--charcoal);
+  line-height: 1.7;
+}
+
+.names-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 24px;
+  margin-bottom: var(--space-lg);
+}
+
+.name-card {
+  text-align: center;
+  background: var(--white);
+  border: 1px solid var(--border-light);
+  border-radius: 12px;
+  padding: var(--space-lg) var(--space-md);
+  box-shadow: 0 2px 20px rgba(0,0,0,0.06);
+  transition: all 0.3s ease;
+}
+
+.name-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 8px 30px rgba(0,0,0,0.1);
+}
+
+.name-photo {
+  display: flex;
+  justify-content: center;
+  margin-bottom: var(--space-sm);
+}
+
+.name-card h4 {
+  font-family: var(--font-headline);
+  font-size: 1.2rem;
+  font-weight: 700;
+  color: var(--navy);
+  margin-bottom: 4px;
+}
+
+.name-card p {
+  font-size: 0.95rem;
+  color: var(--charcoal);
+  opacity: 0.6;
+  font-style: italic;
+}
+
+/* ===== TRUSTPILOT REVIEWS ===== */
+.reviews-layout {
+  display: grid;
+  grid-template-columns: 300px 1fr;
+  gap: var(--space-xl);
+  align-items: start;
+  margin-bottom: var(--space-lg);
+}
+
+.reviews-summary {
+  position: sticky;
+  top: 100px;
+}
+
+.tp-stars-large {
+  font-size: 1.8rem;
+  color: #f5c518;
+  margin-bottom: var(--space-sm);
+  letter-spacing: 2px;
+}
+
+.tp-label {
+  font-family: var(--font-headline);
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: rgba(255,255,255,0.5);
+  margin-bottom: 4px;
+}
+
+.tp-rating {
+  font-size: 1rem;
+  color: rgba(255,255,255,0.45);
+  margin-bottom: var(--space-md);
+}
+
+.tp-headline {
+  font-family: var(--font-headline);
+  font-size: 2.2rem;
+  font-weight: 700;
+  color: var(--white);
+  line-height: 1.2;
+  margin-bottom: var(--space-sm);
+}
+
+.tp-sub {
+  font-size: 1rem;
+  color: rgba(255,255,255,0.45);
+  line-height: 1.5;
+}
+
+.reviews-grid {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.review-card {
+  background: var(--white);
+  border-radius: 12px;
+  padding: var(--space-md) var(--space-lg);
+  color: var(--charcoal);
+  transition: all 0.3s ease;
+}
+
+.review-card:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 8px 30px rgba(0,0,0,0.15);
+}
+
+.review-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 8px;
+}
+
+.review-quote {
+  color: var(--navy);
+  font-size: 1.5rem;
+  opacity: 0.2;
+}
+
+.review-name {
+  font-family: var(--font-headline);
+  font-size: 1.15rem;
+  font-weight: 700;
+  color: var(--navy);
+}
+
+.review-stars {
+  color: #f5c518;
+  font-size: 1rem;
+  margin-bottom: 10px;
+  letter-spacing: 2px;
+}
+
+.review-card h4 {
+  font-family: var(--font-body);
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: var(--navy);
+  margin-bottom: 8px;
+}
+
+.review-card p {
+  font-size: 1.05rem;
+  color: var(--charcoal);
+  line-height: 1.65;
+  opacity: 0.8;
+}
+
 /* ===== WHO THIS IS FOR ===== */
 .for-grid {
   display: grid;
@@ -1160,6 +1326,23 @@ button { font-family: inherit; }
     flex-direction: column;
     align-items: center;
     gap: var(--space-xs);
+  }
+
+  .names-grid {
+    grid-template-columns: 1fr;
+    max-width: 320px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .reviews-layout {
+    grid-template-columns: 1fr;
+    gap: var(--space-lg);
+  }
+
+  .reviews-summary {
+    position: static;
+    text-align: center;
   }
 }
 
@@ -1431,6 +1614,18 @@ button { font-family: inherit; }
     font-size: 0.95rem;
     padding: 4px 0 4px 22px;
   }
+
+  /* What's the Catch */
+  .catch-copy p { font-size: 1.05rem; margin-bottom: 10px; }
+  .names-grid { gap: 12px; }
+  .name-card { padding: 1.25rem 1rem; }
+  .name-card h4 { font-size: 1.05rem; }
+
+  /* Trustpilot Reviews */
+  .tp-headline { font-size: 1.6rem; }
+  .review-card { padding: 1.25rem; }
+  .review-card h4 { font-size: 1rem; }
+  .review-card p { font-size: 0.95rem; }
 
   /* FAQ */
   .faq-item {
