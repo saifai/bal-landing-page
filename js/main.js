@@ -1,14 +1,12 @@
 document.addEventListener('DOMContentLoaded', () => {
 
-  // --- Navbar scroll behavior ---
+  // --- Navbar scroll ---
   const navbar = document.getElementById('navbar');
-  const scrollHandler = () => {
+  window.addEventListener('scroll', () => {
     navbar.classList.toggle('scrolled', window.scrollY > 50);
-  };
-  window.addEventListener('scroll', scrollHandler, { passive: true });
-  scrollHandler();
+  }, { passive: true });
 
-  // --- Mobile menu toggle ---
+  // --- Mobile menu ---
   const navToggle = document.getElementById('navToggle');
   const navMenu = document.getElementById('navMenu');
   if (navToggle && navMenu) {
@@ -18,7 +16,6 @@ document.addEventListener('DOMContentLoaded', () => {
       navMenu.classList.toggle('active');
       document.body.style.overflow = navMenu.classList.contains('active') ? 'hidden' : '';
     });
-    // Close on link click
     navMenu.querySelectorAll('a').forEach(link => {
       link.addEventListener('click', () => {
         navMenu.classList.remove('active');
@@ -33,11 +30,8 @@ document.addEventListener('DOMContentLoaded', () => {
     btn.addEventListener('click', () => {
       const item = btn.closest('.faq-item');
       const isActive = item.classList.contains('active');
-      // Close all
       document.querySelectorAll('.faq-item').forEach(i => i.classList.remove('active'));
-      // Open clicked if wasn't active
       if (!isActive) item.classList.add('active');
-      // Update aria
       btn.setAttribute('aria-expanded', !isActive);
     });
   });
@@ -53,7 +47,7 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   }
 
-  // --- Sticky mobile CTA: hide when near final CTA ---
+  // --- Sticky CTA: hide near final section ---
   const stickyCta = document.getElementById('stickyCta');
   const finalSection = document.getElementById('final-cta');
   if (stickyCta && finalSection) {
@@ -64,32 +58,43 @@ document.addEventListener('DOMContentLoaded', () => {
     observer.observe(finalSection);
   }
 
-  // --- Animate elements on scroll (fade in) ---
-  const animateEls = document.querySelectorAll(
-    '.pain-card, .proof-card, .mistake-card, .week-card, .bonus-card, .stat-card'
+  // --- Scroll reveal (fade in + slide up) ---
+  const revealEls = document.querySelectorAll(
+    '.familiar-item, .case-card, .mistake-item, .week-block, .bonus-item, .stat-card, .for-column, .not-for-column, .faq-item, .price-display, .guarantee-badge'
   );
-  if ('IntersectionObserver' in window) {
-    // Add initial hidden state
-    animateEls.forEach(el => {
+
+  if ('IntersectionObserver' in window && revealEls.length) {
+    revealEls.forEach(el => {
       el.style.opacity = '0';
       el.style.transform = 'translateY(20px)';
-      el.style.transition = 'opacity 0.5s ease, transform 0.5s ease';
+      el.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
     });
 
+    let pending = [];
+    let timer = null;
+
+    const flush = () => {
+      pending.forEach((el, i) => {
+        setTimeout(() => {
+          el.style.opacity = '1';
+          el.style.transform = 'translateY(0)';
+        }, i * 80);
+      });
+      pending = [];
+    };
+
     const revealObserver = new IntersectionObserver((entries) => {
-      entries.forEach((entry, i) => {
+      entries.forEach(entry => {
         if (entry.isIntersecting) {
-          // Stagger animation
-          setTimeout(() => {
-            entry.target.style.opacity = '1';
-            entry.target.style.transform = 'translateY(0)';
-          }, i * 60);
+          pending.push(entry.target);
           revealObserver.unobserve(entry.target);
+          clearTimeout(timer);
+          timer = setTimeout(flush, 50);
         }
       });
-    }, { threshold: 0.1, rootMargin: '0px 0px -40px 0px' });
+    }, { threshold: 0.08, rootMargin: '0px 0px -30px 0px' });
 
-    animateEls.forEach(el => revealObserver.observe(el));
+    revealEls.forEach(el => revealObserver.observe(el));
   }
 
 });
