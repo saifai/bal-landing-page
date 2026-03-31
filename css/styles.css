@@ -907,15 +907,15 @@ button { font-family: inherit; }
 }
 
 .for-column {
-  background: rgba(122, 139, 111, 0.1);
-  border: 1px solid rgba(122, 139, 111, 0.25);
+  background: rgba(122, 139, 111, 0.12);
+  border: 1px solid rgba(160, 190, 140, 0.35);
   border-radius: 12px;
   padding: var(--space-lg) var(--space-md);
 }
 
 .not-for-column {
-  background: rgba(139, 46, 59, 0.08);
-  border: 1px solid rgba(139, 46, 59, 0.2);
+  background: rgba(139, 46, 59, 0.1);
+  border: 1px solid rgba(180, 70, 85, 0.3);
   border-radius: 12px;
   padding: var(--space-lg) var(--space-md);
 }
@@ -923,7 +923,7 @@ button { font-family: inherit; }
 .for-column h3,
 .not-for-column h3 {
   font-family: var(--font-headline);
-  font-size: 1.15rem;
+  font-size: 1.3rem;
   font-weight: 700;
   margin-bottom: var(--space-md);
   display: flex;
@@ -931,8 +931,8 @@ button { font-family: inherit; }
   gap: 10px;
 }
 
-.for-column h3 { color: var(--sage); }
-.not-for-column h3 { color: var(--burgundy); }
+.for-column h3 { color: #A8C896; }
+.not-for-column h3 { color: #D4727E; }
 
 .for-column ul,
 .not-for-column ul {
@@ -941,12 +941,12 @@ button { font-family: inherit; }
 
 .for-column li,
 .not-for-column li {
-  padding: 6px 0;
-  font-size: 1.08rem;
-  color: rgba(255,255,255,0.7);
-  padding-left: 22px;
+  padding: 8px 0;
+  font-size: 1.1rem;
+  color: rgba(255,255,255,0.92);
+  padding-left: 26px;
   position: relative;
-  line-height: 1.5;
+  line-height: 1.6;
 }
 
 .for-column li::before {
@@ -955,9 +955,9 @@ button { font-family: inherit; }
   font-weight: 900;
   position: absolute;
   left: 0;
-  color: var(--sage);
-  font-size: 11px;
-  top: 9px;
+  color: #A8C896;
+  font-size: 14px;
+  top: 11px;
 }
 
 .not-for-column li::before {
@@ -966,9 +966,9 @@ button { font-family: inherit; }
   font-weight: 900;
   position: absolute;
   left: 0;
-  color: var(--burgundy);
-  font-size: 12px;
-  top: 9px;
+  color: #D4727E;
+  font-size: 14px;
+  top: 11px;
 }
 
 /* ===== FAQ ===== */
